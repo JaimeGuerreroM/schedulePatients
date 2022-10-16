@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-10-2022 a las 01:50:14
+-- Tiempo de generación: 16-10-2022 a las 19:19:20
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -18,35 +18,40 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `schedulepatients`
+-- Base de datos: `consultoriopsico`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `schedulepatients`
+-- Estructura de tabla para la tabla `pacientes`
 --
 
-CREATE TABLE `schedulepatients` (
+CREATE TABLE `pacientes` (
   `id` int(11) NOT NULL,
-  `firsName` varchar(50) NOT NULL,
-  `lastName` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `phone` int(11) NOT NULL,
-  `diseases` varchar(250) NOT NULL,
-  `sessionDate` datetime(6) NOT NULL,
-  `duration` varchar(50) NOT NULL,
-  `image` varchar(100) NOT NULL
+  `nombres` varchar(50) NOT NULL,
+  `correo` varchar(50) NOT NULL,
+  `celular` varchar(50) NOT NULL,
+  `fecha` datetime(6) NOT NULL,
+  `direccion` varchar(50) NOT NULL,
+  `detalles` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pacientes`
+--
+
+INSERT INTO `pacientes` (`id`, `nombres`, `correo`, `celular`, `fecha`, `direccion`, `detalles`) VALUES
+(19, 'Laura Roa', 'laura2007@gmail.com', '3229456457', '2022-10-22 15:00:00.000000', 'Cra 5 # 13 - 51 Casa 12', 'Tomar medidas para instalación de piso laminado');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `schedulepatients`
+-- Indices de la tabla `pacientes`
 --
-ALTER TABLE `schedulepatients`
+ALTER TABLE `pacientes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -54,10 +59,10 @@ ALTER TABLE `schedulepatients`
 --
 
 --
--- AUTO_INCREMENT de la tabla `schedulepatients`
+-- AUTO_INCREMENT de la tabla `pacientes`
 --
-ALTER TABLE `schedulepatients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `pacientes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
